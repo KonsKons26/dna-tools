@@ -82,6 +82,27 @@ def get_all_frames(dna):
             frame in zip(frame_names, frames)}
 
 
+def get_frame(dna, frame):
+    """This function return the specified frame.
+    Accepted frame identifiers:
+    "f1", "f2", "f3", "r1", "r2", "r3" or
+    "1f", "2f", "3f", "1r", "2r", "3r", or
+    1, 2, 3
+    """
+    if frame == "f1" or frame == "1f" or frame == 1:
+        return dna
+    elif frame == "f2" or frame == "2f" or frame == 2:
+        return dna[1:]
+    elif frame == "f3" or frame == "3f" or frame == 3:
+        return dna[2:]
+    elif frame == "r1" or frame == "1r":
+        return reverse_complement(dna)
+    elif frame == "r2" or frame == "2r":
+        return reverse_complement(dna)[1:]
+    elif frame == "r3" or frame == "3r":
+        return reverse_complement(dna)[2:]
+
+
 def has_stop_codon(dna, frame=0):
     """This function checks if a given DNA sequence has an in frame stop codon."""
     stop_codon_found = False
