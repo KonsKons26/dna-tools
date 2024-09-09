@@ -1,3 +1,3 @@
 # dna-tools
 
-A few tools for handling dna sequences
+A few rudimentary tools for handling dna sequences
